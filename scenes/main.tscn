@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmmrhb4v17dqp"]
+
+[ext_resource type="Texture2D" uid="uid://deytejmfljhxs" path="res://assets/background.png" id="1_857vj"]
+[ext_resource type="PackedScene" uid="uid://b04xwdiext8vg" path="res://scenes/player.tscn" id="2_qjyvx"]
+[ext_resource type="PackedScene" uid="uid://dpoojx8lcldak" path="res://scenes/monster.tscn" id="3_0v8op"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lxgm"]
+size = Vector2(1347.5, 107.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irtfr"]
+size = Vector2(52, 579)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dibde"]
+size = Vector2(58, 579)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639, 382)
+scale = Vector2(1.72588, 1.72588)
+texture = ExtResource("1_857vj")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(648.75, 623.5)
+shape = SubResource("RectangleShape2D_0lxgm")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-5, 279.5)
+shape = SubResource("RectangleShape2D_irtfr")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1296, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(-7, 279.5)
+shape = SubResource("RectangleShape2D_dibde")
+
+[node name="Player" parent="." instance=ExtResource("2_qjyvx")]
+position = Vector2(116, 507)
+
+[node name="Monster" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(935, 486)
+
+[node name="Monster2" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(804, 457)
+
+[node name="Monster3" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(679, 494)
+
+[node name="Monster4" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(577, 483)
+
+[node name="Monster5" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(439, 493)
+
+[node name="Monster6" parent="." instance=ExtResource("3_0v8op")]
+position = Vector2(1095, 483)
